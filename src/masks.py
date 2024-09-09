@@ -1,4 +1,7 @@
-def get_mask_card_number(card_number: int|str) -> str:
+from typing import Union
+
+
+def get_mask_card_number(card_number: Union[str, int]) -> str:
     """
     Принимает на вход номер карты и возвращает ее маску. Номер карты замаскирован и отображается в формате:
     XXXX XX** **** XXXX
@@ -8,13 +11,11 @@ def get_mask_card_number(card_number: int|str) -> str:
         raise ValueError("Введен неверный номер карты")
     if len(card_text_view) != 16:
         raise ValueError("Неверный формат номера карты")
-    card_formated_view = (
-        f"{card_text_view[0:4]} {card_text_view[4:6]}** **** {card_text_view[-4:]}"
-    )
+    card_formated_view = f"{card_text_view[0:4]} {card_text_view[4:6]}** **** {card_text_view[-4:]}"
     return card_formated_view
 
 
-def get_mask_account(bank_account_number: int|str) -> str:
+def get_mask_account(bank_account_number: Union[str, int]) -> str:
     """
     Принимает на вход номер счета и возвращает его маску. Номер счета замаскирован и отображается в формате
     **XXXX
