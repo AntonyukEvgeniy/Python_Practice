@@ -1,4 +1,7 @@
-def filter_by_state(*,transactions: list[dict], state="EXECUTED") -> list[dict]:
+from typing import Union
+
+
+def filter_by_state(*, transactions: list[dict], state: str = "EXECUTED") -> list[dict]:
     """
     Принимает список словарей и опционально значение для ключа state.
     Функция возвращает новый список словарей, содержащий только те словари, у которых ключ равен state.
@@ -7,7 +10,7 @@ def filter_by_state(*,transactions: list[dict], state="EXECUTED") -> list[dict]:
     return filtred_transactions
 
 
-def sort_by_date(*,transactions: list[dict], sort_order=True) -> list[dict]:
+def sort_by_date(*, transactions: list[dict], sort_order: Union[bool, str] = "True") -> list[dict]:
     """
     Принимает список словарей и необязательный параметр, задающий порядок сортировки (по умолчанию — убывание).
     Функция должна возвращать новый список, отсортированный по дате.
