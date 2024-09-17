@@ -11,7 +11,7 @@ def mask_account_card(user_pay_info: str) -> str:
     user_info_number = "".join(filter(lambda z: z.isdigit(), user_pay_info))
     # for s in re.findall('([a-zA-Z ]*)\d*.*', user_pay_info):
     #     print(s)
-    user_info_text = "".join(filter(lambda z: z.isalpha() or z==" ", user_pay_info))
+    user_info_text = "".join(filter(lambda z: z.isalpha() or z == " ", user_pay_info))
     if not user_info_text or not user_info_number:
         raise ValueError("Введены некорректные данные")
     if user_pay_info.startswith("Счет"):
