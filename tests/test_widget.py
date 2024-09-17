@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import mask_account_card
+from src.widget import mask_account_card, get_date
 
 
 @pytest.mark.parametrize(
@@ -21,3 +21,12 @@ def test_mask_account_card_wrong_format():
     user_pay_info = "Cxtn"
     with pytest.raises(ValueError,match="Введены некорректные данные"):
         mask_account_card(user_pay_info)
+
+@pytest.mark.parametrize("date_to_format,expected",[("2024-03-11T02:26:18.671407","11.03.2024")])
+def test_get_date(date_to_format,expected):
+    assert get_date(date_to_format) == expected
+
+def test_get_date_wrong_format():
+    date_to_format = ""
+    with pytest.raises(ValueError,match="Некорректный формат даты, дата должна быть в формате: 2024-03-11T02:26:18.671407"):
+        get_date(date_to_format)

@@ -28,6 +28,9 @@ def get_date(date_to_format: str) -> str:
     и возвращает строку с датой в формате
     "11.03.2024"
     """
-    date_formated_datetime = datetime.datetime.strptime(date_to_format, "%Y-%m-%dT%H:%M:%S.%f")
-    date_formated_date = date_formated_datetime.strftime("%d.%m.%Y")
+    try:
+        date_formated_datetime = datetime.datetime.strptime(date_to_format, "%Y-%m-%dT%H:%M:%S.%f")
+        date_formated_date = date_formated_datetime.strftime("%d.%m.%Y")
+    except ValueError:
+        raise ValueError("Некорректный формат даты, дата должна быть в формате: 2024-03-11T02:26:18.671407")
     return str(date_formated_date)
