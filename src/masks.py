@@ -8,7 +8,7 @@ def get_mask_card_number(card_number: Union[str, int]) -> str:
     """
     card_text_view = str(card_number)
     if not card_text_view.isdigit():
-        raise ValueError("Введен неверный номер карты")
+        raise ValueError("Неверный формат номера карты")
     if len(card_text_view) != 16:
         raise ValueError("Неверный формат номера карты")
     card_formated_view = f"{card_text_view[0:4]} {card_text_view[4:6]}** **** {card_text_view[-4:]}"
