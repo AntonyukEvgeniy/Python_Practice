@@ -1,6 +1,9 @@
 from typing import Union
 
+from src.decorators import log
 
+
+@log("mylog.txt")
 def get_mask_card_number(card_number: Union[str, int]) -> str:
     """
     Принимает на вход номер карты и возвращает ее маску. Номер карты замаскирован и отображается в формате:
@@ -15,6 +18,7 @@ def get_mask_card_number(card_number: Union[str, int]) -> str:
     return card_formated_view
 
 
+@log()
 def get_mask_account(bank_account_number: Union[str, int]) -> str:
     """
     Принимает на вход номер счета и возвращает его маску. Номер счета замаскирован и отображается в формате

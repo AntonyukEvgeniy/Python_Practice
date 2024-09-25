@@ -1,0 +1,19 @@
+
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (2202208131326309777,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (2202208131326309777,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (2202208131326309777,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (2202208131326309777,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (2202208131326309777,), {}
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
