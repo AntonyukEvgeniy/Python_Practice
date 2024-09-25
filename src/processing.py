@@ -1,4 +1,3 @@
-from typing import Union
 
 
 def filter_by_state(*, transactions: list[dict], state: str = "EXECUTED") -> list[dict]:
