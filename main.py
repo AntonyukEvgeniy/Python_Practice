@@ -1,9 +1,5 @@
-from functools import wraps
-
-from src.decorators import log
-from src.generators import card_number_generator
 from src.masks import get_mask_card_number, get_mask_account
-from src.widget import mask_account_card
+
 
 transactions = [
     {
