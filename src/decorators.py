@@ -1,7 +1,17 @@
 from functools import wraps
+from typing import Any
 
 
-def log(file=""):
+def log(file:str="")->Any:
+    """
+    Декоратор, который логирует выполнение функции в файл либо в консоль, в зависимости от параметра file
+    Ожидаемый вывод в лог-файл mylog.txt
+    при успешном выполнении:
+    my_function ok
+    Ожидаемый вывод при ошибке:
+    my_function error: тип ошибки. Inputs: (1, 2), {}
+    """
+
     def logger(func):
         @wraps(func)
         def wrapped(*args, **kwargs):
