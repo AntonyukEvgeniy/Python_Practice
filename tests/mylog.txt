@@ -9,3 +9,6 @@ test_log_function_with_file_error error: ValueError('Проверка записи ошибки в фа
 test_log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
 test_log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
 test_log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
+test_log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
+log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
+log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}

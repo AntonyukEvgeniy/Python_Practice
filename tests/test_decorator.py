@@ -4,29 +4,30 @@ from src.decorators import log
 
 
 @log("")
-def test_log_function():
+def log_function():
     return None
 
 
 def test_log_decorator(capsys):
-    test_log_function()
+    log_function()
     captured = capsys.readouterr()
-    assert captured.out == "test_log_function_error ok\n"
+    assert captured.out == "log_function ok\n"
 
 
 @log("")
-def test_log_function_error():
+def log_function_error():
     raise ValueError("Проверка записи ошибки в консоль")
 
 
 def test_log_decorator_error(capsys):
     with pytest.raises(Exception, match="Проверка записи ошибки в консоль"):
-        test_log_function_error()
+        log_function_error()
     captured = capsys.readouterr()
     assert (
         captured.out
-        == "test_log_function_error error: ValueError('Проверка записи ошибки в консоль'). Inputs: (), {}\n"
+        == "log_function_error error: ValueError('Проверка записи ошибки в консоль'). Inputs: (), {}\n"
     )
+
 
 
 @log("mylog.txt")
@@ -35,7 +36,7 @@ def test_log_function_with_file():
 
 
 @log("mylog.txt")
-def test_log_function_with_file_error():
+def log_function_with_file_error():
     raise ValueError("Проверка записи ошибки в файл")
 
 
@@ -48,10 +49,10 @@ def test_log_decorator_with_file():
 
 def test_log_decorator_with_file_error():
     with pytest.raises(Exception, match="Проверка записи ошибки в файл"):
-        test_log_function_with_file_error()
+        log_function_with_file_error()
     with open("mylog.txt", "r") as f:
         last_line = f.readlines()[-1]
         assert (
             last_line
-            == "test_log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}"
+            == "log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}"
         )
