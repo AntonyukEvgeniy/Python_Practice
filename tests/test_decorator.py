@@ -23,11 +23,7 @@ def test_log_decorator_error(capsys):
     with pytest.raises(Exception, match="Проверка записи ошибки в консоль"):
         log_function_error()
     captured = capsys.readouterr()
-    assert (
-        captured.out
-        == "log_function_error error: ValueError('Проверка записи ошибки в консоль'). Inputs: (), {}\n"
-    )
-
+    assert captured.out == "log_function_error error: ValueError('Проверка записи ошибки в консоль'). Inputs: (), {}\n"
 
 
 @log("mylog.txt")

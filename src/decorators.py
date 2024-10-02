@@ -2,7 +2,7 @@ from functools import wraps
 from typing import Any
 
 
-def log(file:str="")->Any:
+def log(file: str = "") -> Any:
     """
     Декоратор, который логирует выполнение функции в файл либо в консоль, в зависимости от параметра file
     Ожидаемый вывод в лог-файл mylog.txt
