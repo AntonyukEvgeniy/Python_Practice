@@ -135,3 +135,8 @@ def card_numbers_expected_1():
         "0000 0000 0000 0004",
         "0000 0000 0000 0005",
     ]
+
+
+@pytest.fixture
+def filepath():
+    return "data/operations.json"
