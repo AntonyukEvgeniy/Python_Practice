@@ -1,6 +1,6 @@
 import pytest
 
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 def test_filter_by_currency(test_transactions, currency="USD"):
@@ -83,7 +83,8 @@ def test_card_number_generator(start, stop, expected):
         generated_card_numbers.append(card_number)
     assert generated_card_numbers == expected
 
+
 def test_card_number_generator_error():
-    gen = card_number_generator(56,55)
+    gen = card_number_generator(56, 55)
     with pytest.raises(ValueError, match="Невозможный диапазон номера карты"):
         assert next(gen)

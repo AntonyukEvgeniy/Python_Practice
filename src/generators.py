@@ -1,6 +1,9 @@
 from typing import Iterator
 
+from src.decorators import log
 
+
+@log()
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict]:
     """
     Принимает на вход список словарей, представляющих транзакции.
@@ -16,6 +19,7 @@ def filter_by_currency(transactions: list[dict], currency: str) -> Iterator[dict
         yield tran
 
 
+@log()
 def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
     """
     Генератор transaction_descriptions, который принимает список словарей с транзакциями
@@ -27,6 +31,7 @@ def transaction_descriptions(transactions: list[dict]) -> Iterator[str]:
         yield tran["description"]
 
 
+@log()
 def card_number_generator(start: int, stop: int) -> Iterator[str]:
     """
     Генерирует номера банковских карт в формате XXXX XXXX XXXX XXXX, где X
@@ -40,6 +45,8 @@ def card_number_generator(start: int, stop: int) -> Iterator[str]:
     for n in range(start, stop + 1, 1):
         change_len = 16 - len(str(n))
         credit_card_number_new = f"{credit_card_number[0:change_len]}{n}"
-        credit_card_number_new_formatted = (f"{credit_card_number_new[0:4]} {credit_card_number_new[4:8]}"
-                                            f" {credit_card_number_new[8:12]} {credit_card_number_new[12:]}")
+        credit_card_number_new_formatted = (
+            f"{credit_card_number_new[0:4]} {credit_card_number_new[4:8]}"
+            f" {credit_card_number_new[8:12]} {credit_card_number_new[12:]}"
+        )
         yield credit_card_number_new_formatted

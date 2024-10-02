@@ -1,4 +1,5 @@
-from src.generators import card_number_generator
+from src.masks import get_mask_card_number, get_mask_account
+
 
 transactions = [
     {
@@ -49,5 +50,14 @@ transactions = [
 # descriptions = transaction_descriptions(transactions)
 # for _ in range(4):
 #     print(next(descriptions))
-for card_number in card_number_generator(1, 5):
-    print(card_number)
+# for card_number in card_number_generator(1, 5):
+#     print(card_number)
+
+
+# get_mask_account(73654108430135874305)
+# get_mask_account("73654108430135874305_777")
+# mask_account_card("Visa Platinum 7000792289606361")
+
+get_mask_account(73654108430135874305)
+get_mask_card_number(2202208131326309)
+print(get_mask_card_number(2202208131326309))
