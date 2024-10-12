@@ -1,5 +1,5 @@
-from src.masks import get_mask_card_number, get_mask_account
-
+from src.masks import get_mask_account, get_mask_card_number
+from src.utils import get_transactions_from_file
 
 transactions = [
     {
@@ -58,6 +58,6 @@ transactions = [
 # get_mask_account("73654108430135874305_777")
 # mask_account_card("Visa Platinum 7000792289606361")
 
-get_mask_account(73654108430135874305)
+get_mask_account("73654108430135874305")
 get_mask_card_number(2202208131326309)
-print(get_mask_card_number(2202208131326309))
+get_transactions_from_file("data/operations.jsonqasasa")

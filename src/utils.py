@@ -1,7 +1,15 @@
 import json
+import logging
 from json import JSONDecodeError
 from pathlib import Path
 from typing import Any
+
+logger = logging.getLogger(__name__)
+file_handler = logging.FileHandler("logs/utils.log", mode="w")
+logger.addHandler(file_handler)
+file_formatter = logging.Formatter("%(asctime)s - %(filename)s - %(levelname)s - %(message)s")
+file_handler.setFormatter(file_formatter)
+logger.setLevel(logging.DEBUG)
 
 
 def get_transactions_from_file(filepath: str) -> Any:
@@ -14,7 +22,8 @@ def get_transactions_from_file(filepath: str) -> Any:
     try:
         with open(file_to_open, "r", encoding="utf8") as f:
             data = json.load(f)
-            print(type(data))
+            logger.debug("Файл успешно распарсен.")
             return data
     except (FileNotFoundError, JSONDecodeError, TypeError, KeyError, ValueError):
+        logger.error("Произошла ошибка при попытке распарсить файл. Результат: []")
         return []
