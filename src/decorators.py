@@ -1,5 +1,5 @@
 from functools import wraps
-from typing import Any
+from typing import Any, Callable
 
 
 def log(file: str = "") -> Any:
@@ -12,9 +12,9 @@ def log(file: str = "") -> Any:
     my_function error: тип ошибки. Inputs: (1, 2), {}
     """
 
-    def logger(func):
+    def logger(func: Callable) -> Callable:
         @wraps(func)
-        def wrapped(*args, **kwargs):
+        def wrapped(*args: Any, **kwargs: Any) -> Any:
             try:
                 func(*args, **kwargs)
                 if file != "":

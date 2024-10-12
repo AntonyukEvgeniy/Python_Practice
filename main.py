@@ -1,5 +1,4 @@
-from src.masks import get_mask_account, get_mask_card_number
-from src.utils import get_transactions_from_file
+from src.utils_xl import get_transactions_from_csv_file, get_transactions_from_xlsx_file
 
 transactions = [
     {
@@ -58,6 +57,9 @@ transactions = [
 # get_mask_account("73654108430135874305_777")
 # mask_account_card("Visa Platinum 7000792289606361")
 
-get_mask_account("73654108430135874305")
-get_mask_card_number(2202208131326309)
-get_transactions_from_file("data/operations.jsonqasasa")
+# get_mask_account("73654108430135874305")
+# get_mask_card_number(2202208131326309)
+# get_transactions_from_file("data/operations.jsonqasasa")
+
+print(get_transactions_from_csv_file("data/transactions.csv")[4])
+print(get_transactions_from_xlsx_file("data/transactions_excel.xlsx")[4])

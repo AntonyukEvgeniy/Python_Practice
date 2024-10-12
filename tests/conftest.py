@@ -140,3 +140,13 @@ def card_numbers_expected_1():
 @pytest.fixture
 def filepath():
     return "data/operations.json"
+
+
+@pytest.fixture
+def filepath_csv():
+    return "data/transactions.csv"
+
+
+@pytest.fixture
+def filepath_exel():
+    return "data/transactions.xlsx"

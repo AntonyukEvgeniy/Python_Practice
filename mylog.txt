@@ -172,3 +172,39 @@ get_mask_card_number ok
 get_mask_card_number ok
 get_mask_card_number ok
 get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (220220813132630955,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (220220813132630955,), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: (220220813132630955,), {}
+get_mask_card_number ok
+get_mask_card_number ok
+test_log_function_with_file ok
+test_log_function_with_file ok
+log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: ('2202208131326309A',), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: ('2202208131326309999',), {}
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+test_log_function_with_file ok
+test_log_function_with_file ok
+log_function_with_file_error error: ValueError('Проверка записи ошибки в файл'). Inputs: (), {}
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: ('2202208131326309A',), {}
+get_mask_card_number error: ValueError('Неверный формат номера карты'). Inputs: ('2202208131326309999',), {}
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
+get_mask_card_number ok
